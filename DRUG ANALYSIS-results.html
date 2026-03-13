@@ -1,0 +1,4061 @@
+<!DOCTYPE html>
+<html class="ods_0f3389d2-c8dc-4451-94c7-465853df23b8" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="SAS 9.4" name="generator"/>
+<title>Results: DRUG ANALYSIS.sas</title>
+<style>
+/*<![CDATA[*/
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body.c section > table, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body.c section > pre, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body.c div > table,
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body.c div > pre, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body.c article > table, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body.c article > pre,
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body.j section > table, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body.j section > pre, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body.j div > table,
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body.j div > pre, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body.j article > table, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body.j article > pre,
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body.c p.note, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body.c p.warning, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body.c p.error, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body.c p.fatal,
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body.j p.note, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body.j p.warning, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body.j p.error, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body.j p.fatal,
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body.c > table.layoutcontainer, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body.j > table.layoutcontainer { margin-left: auto; margin-right: auto }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .layoutregion.l table, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .layoutregion.l pre, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .layoutregion.l p.note,
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .layoutregion.l p.warning, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .layoutregion.l p.error, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .layoutregion.l p.fatal { margin-left: 0 }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .layoutregion.c table, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .layoutregion.c pre, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .layoutregion.c p.note,
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .layoutregion.c p.warning, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .layoutregion.c p.error, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .layoutregion.c p.fatal { margin-left: auto; margin-right: auto }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .layoutregion.r table, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .layoutregion.r pre, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .layoutregion.r p.note,
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .layoutregion.r table, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .layoutregion.r pre, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .layoutregion.r p.note,
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .layoutregion.r p.warning, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .layoutregion.r p.error, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .layoutregion.r p.fatal { margin-right: 0 }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 article, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 aside, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 details, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 figcaption, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 figure, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 footer, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 header, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 hgroup, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 nav, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 section { display: block }
+html.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 { font-size: 100% }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body { margin: 1em; font-size: 13px; line-height: 1.231 }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 sup { position: relative; vertical-align: baseline; bottom: 0.25em; font-size: 0.8em }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 sub { position: relative; vertical-align: baseline; top: 0.25em; font-size: 0.8em }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 ul, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 ol { margin: 1em 0; padding: 0 0 0 40px }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 dd { margin: 0 0 0 40px }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 nav ul, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0 }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 img { border: 0; vertical-align: middle }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 svg:not(:root) { overflow: hidden }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 figure { margin: 0 }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 table { border-collapse: collapse; border-spacing: 0 }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .layoutcontainer { border-collapse: separate; border-spacing: 0 }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 p { margin-top: 0; text-align: left }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 h1.heading1 { text-align: left }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 h2.heading2 { text-align: left }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 h3.heading3 { text-align: left }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 h4.heading4 { text-align: left }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 h5.heading5 { text-align: left }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 h6.heading6 { text-align: left }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 span { text-align: left }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 table { margin-bottom: 1em }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 td, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 th { text-align: left; padding: 3px 6px; vertical-align: top }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 td[class$="fixed"], .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 th[class$="fixed"] { white-space: pre }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 section, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 article { padding-top: 1px; padding-bottom: 8px }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 hr.pagebreak { height: 0px; border: 0; border-bottom: 1px solid #c0c0c0; margin: 1em 0 }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .stacked-value { text-align: left; display: block }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .stacked-cell > .stacked-value, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 td.data > td.data, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 th.data > td.data, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 th.data > th.data, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 td.data > th.data, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 th.header > th.header { border: 0 }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .stacked-cell > div.data { border-width: 0 }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systitleandfootercontainer { white-space: nowrap; margin-bottom: 1em }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systitleandfootercontainer > p { margin: 0 }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systitleandfootercontainer > p > span { display: inline-block; width: 100%; white-space: normal }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .batch { display: table }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .toc { display: none }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .proc_note_group, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .proc_title_group { margin-bottom: 1em }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 p.proctitle { margin: 0 }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 p.note, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 p.warning, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 p.error, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 p.fatal { display: table }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .notebanner, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .warnbanner, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .errorbanner, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .fatalbanner,
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .notecontent, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .warncontent, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .errorcontent, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .fatalcontent { display: table-cell; padding: 0.5em }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .notebanner, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .warnbanner, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .errorbanner, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .fatalbanner { padding-right: 0 }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body > div > ol li { text-align: left }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .beforecaption > h4 { margin-top: 0; margin-bottom: 0 }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .c { text-align: center }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .r { text-align: right }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .l { text-align: left }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .j { text-align: justify }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .d { text-align: right }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .b { vertical-align: bottom }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .m { vertical-align: middle }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .t { vertical-align: top }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .accessiblecaption {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 a:active { color: #800080 }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .aftercaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    padding-top: 4pt;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .batch > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .batch > tbody, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .batch > thead, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .batch > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .batch { border: hidden; }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .batch {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    padding: 7px;
+    }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .beforecaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .body {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .bodydate {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: right;
+    vertical-align: top;
+    width: 100%;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .bycontentfolder {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .byline {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .bylinecontainer > col, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .bylinecontainer > colgroup > col, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .bylinecontainer > colgroup, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .bylinecontainer > tr, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .bylinecontainer > * > tr, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .bylinecontainer > thead, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .bylinecontainer > tbody, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .bylinecontainer > tfoot { border: none; }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .bylinecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .caption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .cell, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .container {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .contentfolder, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .contentitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .contentproclabel, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .contentprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .contents {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .contentsdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .contenttitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .continued {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    width: 100%;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .data, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .dataemphasis {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .dataemphasisfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .dataempty {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .datafixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .datastrong {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .datastrongfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .date {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .document {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .errorbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .errorcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .errorcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .extendedpage {
+    background-color: #fafbfe;
+    border-style: solid;
+    border-width: 1pt;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .fatalbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .fatalcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .fatalcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .folderaction {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .footer {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .footeremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .footeremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .footerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .footerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .footerstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .footerstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .frame {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .graph > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .graph > tbody, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .graph > thead, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .graph > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .graph { border: hidden; }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .graph {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .header {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .headeremphasis {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .headeremphasisfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .headerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .headerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .headersandfooters {
+    background-color: #edf2f9;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .headerstrong {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .headerstrongfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .heading1, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .heading2, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .heading3, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .heading4, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .heading5, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .heading6 { font-family: Arial, Helvetica, sans-serif }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .index {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .indexaction, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .indexitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .indexprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .indextitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .layoutcontainer, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .layoutregion {
+    border-width: 0;
+    border-spacing: 30px;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .linecontent {
+    background-color: #fafbfe;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 a:link { color: #0000ff }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .list {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .list10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .list2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .list3, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .list4, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .list5, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .list6, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .list7, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .list8, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .list9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .listitem {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .listitem10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .listitem2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .listitem3, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .listitem4, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .listitem5, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .listitem6, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .listitem7, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .listitem8, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .listitem9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .note {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .notebanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .notecontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .notecontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .output > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .output > tbody, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .output > thead, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .output > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .output { border: hidden; }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .output {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .pageno {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    text-align: right;
+    vertical-align: top;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .pages {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .pagesdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .pagesitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .pagesproclabel, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .pagesprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .pagestitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .paragraph {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .parskip > col, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .parskip > colgroup > col, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .parskip > colgroup, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .parskip > tr, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .parskip > * > tr, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .parskip > thead, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .parskip > tbody, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .parskip > tfoot { border: none; }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .parskip {
+    border: none;
+    border-spacing: 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .prepage {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: left;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .proctitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .proctitlefixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .rowfooter {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .rowfooteremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .rowfooteremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .rowfooterempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .rowfooterfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .rowfooterstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .rowfooterstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .rowheader {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .rowheaderemphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .rowheaderemphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .rowheaderempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .rowheaderfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .rowheaderstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .rowheaderstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systemfooter, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systemfooter10, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systemfooter2, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systemfooter3, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systemfooter4, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systemfooter5, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systemfooter6, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systemfooter7, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systemfooter8, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systemfooter9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systemtitle, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systemtitle10, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systemtitle2, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systemtitle3, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systemtitle4, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systemtitle5, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systemtitle6, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systemtitle7, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systemtitle8, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systemtitle9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systitleandfootercontainer > col, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systitleandfootercontainer > colgroup > col, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systitleandfootercontainer > colgroup, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systitleandfootercontainer > tr, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systitleandfootercontainer > * > tr, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systitleandfootercontainer > thead, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systitleandfootercontainer > tbody, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systitleandfootercontainer > tfoot { border: none; }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .systitleandfootercontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .table > col, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .table > colgroup > col {
+    border-left: 1px solid #c1c1c1;
+    border-right: 0 solid #c1c1c1;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .table > tr, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .table > * > tr {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 0 solid #c1c1c1;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .table { border: hidden; }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .table {
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 1px 0 0 1px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .titleandnotecontainer > col, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .titleandnotecontainer > colgroup > col, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .titleandnotecontainer > colgroup, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .titleandnotecontainer > tr, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .titleandnotecontainer > * > tr, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .titleandnotecontainer > thead, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .titleandnotecontainer > tbody, .ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .titleandnotecontainer > tfoot { border: none; }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .titleandnotecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .titlesandfooters {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .usertext {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 a:visited { color: #800080 }
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .warnbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .warncontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_0f3389d2-c8dc-4451-94c7-465853df23b8 .warncontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+/*]]>*/
+</style>
+</head>
+<body class="body">
+<div id="div_0f3389d2-c8dc-4451-94c7-465853df23b8" class="c body">
+<h1 class="body toc">Results: DRUG ANALYSIS.sas</h1>
+<section data-name="Print" data-sec-type="proc">
+<h1 class="contentprocname toc">The Print Procedure</h1>
+<article id="IDX" aria-label="Data Set WORK.DRUGDATA">
+<h1 class="contentitem toc">Data Set WORK.DRUGDATA</h1>
+<table class="table" style="border-spacing: 0" aria-label="Data Set WORK.DRUGDATA">
+<caption aria-label="Data Set WORK.DRUGDATA"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="r header" scope="col">Obs</th>
+<th class="r header" scope="col">Age</th>
+<th class="header" scope="col">Sex</th>
+<th class="header" scope="col">BP</th>
+<th class="header" scope="col">Cholesterol</th>
+<th class="r header" scope="col">Na_to_K</th>
+<th class="header" scope="col">Drug</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">53</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">16.3</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="r data">66</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">9</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="r data">43</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">21.4</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="r data">29</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">28</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="r data">57</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">22.4</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">6</th>
+<td class="r data">22</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">11</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">7</th>
+<td class="r data">35</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">18.1</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">8</th>
+<td class="r data">53</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">6.1</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">9</th>
+<td class="r data">72</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">33.8</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">10</th>
+<td class="r data">33</td>
+<td class="data">M</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">8.7</td>
+<td class="data">DrugB</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">11</th>
+<td class="r data">37</td>
+<td class="data">M</td>
+<td class="data">HIGH</td>
+<td class="data">HIGH</td>
+<td class="r data">25.1</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">12</th>
+<td class="r data">25</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">37.6</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">13</th>
+<td class="r data">25</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">23.2</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">14</th>
+<td class="r data">38</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">35.6</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">15</th>
+<td class="r data">67</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">13.6</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">16</th>
+<td class="r data">50</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">30.3</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">17</th>
+<td class="r data">54</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">23</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">18</th>
+<td class="r data">38</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">HIGH</td>
+<td class="r data">29.1</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">19</th>
+<td class="r data">17</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">8</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">20</th>
+<td class="r data">36</td>
+<td class="data">M</td>
+<td class="data">HIGH</td>
+<td class="data">HIGH</td>
+<td class="r data">10.7</td>
+<td class="data">DrugA</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">21</th>
+<td class="r data">67</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">10.3</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">22</th>
+<td class="r data">16</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">28</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">23</th>
+<td class="r data">38</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">33</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">24</th>
+<td class="r data">58</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">30</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">25</th>
+<td class="r data">44</td>
+<td class="data">M</td>
+<td class="data">HIGH</td>
+<td class="data">HIGH</td>
+<td class="r data">7</td>
+<td class="data">DrugA</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">26</th>
+<td class="r data">52</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">33.8</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">27</th>
+<td class="r data">16</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">17.3</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">28</th>
+<td class="r data">74</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">18.7</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">29</th>
+<td class="r data">35</td>
+<td class="data">M</td>
+<td class="data">HIGH</td>
+<td class="data">HIGH</td>
+<td class="r data">9.4</td>
+<td class="data">DrugA</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">30</th>
+<td class="r data">47</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">29.6</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">31</th>
+<td class="r data">26</td>
+<td class="data">M</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">11.8</td>
+<td class="data">DrugB</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">32</th>
+<td class="r data">72</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">24</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">33</th>
+<td class="r data">36</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">32.9</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">34</th>
+<td class="r data">58</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">HIGH</td>
+<td class="r data">8.9</td>
+<td class="data">DrugA</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">35</th>
+<td class="r data">39</td>
+<td class="data">M</td>
+<td class="data">HIGH</td>
+<td class="data">HIGH</td>
+<td class="r data">23.1</td>
+<td class="data">DrugA</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">36</th>
+<td class="r data">63</td>
+<td class="data">M</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">13.5</td>
+<td class="data">DrugB</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">37</th>
+<td class="r data">41</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">17</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">38</th>
+<td class="r data">73</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">21.2</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">39</th>
+<td class="r data">56</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">17.4</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">40</th>
+<td class="r data">42</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">HIGH</td>
+<td class="r data">26.8</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">41</th>
+<td class="r data">74</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">21.3</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">42</th>
+<td class="r data">30</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">24.7</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">43</th>
+<td class="r data">29</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">29.6</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">44</th>
+<td class="r data">61</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">23.8</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">45</th>
+<td class="r data">65</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">24.8</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">46</th>
+<td class="r data">58</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">24.1</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">47</th>
+<td class="r data">69</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">18.1</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">48</th>
+<td class="r data">66</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">16.8</td>
+<td class="data">DrugB</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">49</th>
+<td class="r data">71</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">34.8</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">50</th>
+<td class="r data">17</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">25.4</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">51</th>
+<td class="r data">51</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">13.8</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">52</th>
+<td class="r data">65</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">21.9</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">53</th>
+<td class="r data">21</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">16.6</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">54</th>
+<td class="r data">35</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">35.9</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">55</th>
+<td class="r data">23</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">6.2</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">56</th>
+<td class="r data">53</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">13.2</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">57</th>
+<td class="r data">32</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">17.7</td>
+<td class="data">DrugB</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">58</th>
+<td class="r data">18</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">21.6</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">59</th>
+<td class="r data">39</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">33.2</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">60</th>
+<td class="r data">74</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">8.8</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">61</th>
+<td class="r data">28</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">31.8</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">62</th>
+<td class="r data">64</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">7.8</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">63</th>
+<td class="r data">72</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">33</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">64</th>
+<td class="r data">23</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">7.7</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">65</th>
+<td class="r data">40</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">6.6</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">66</th>
+<td class="r data">67</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">28.3</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">67</th>
+<td class="r data">16</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">37.9</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">68</th>
+<td class="r data">34</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">34.7</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">69</th>
+<td class="r data">42</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">24.4</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">70</th>
+<td class="r data">61</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">35.4</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">71</th>
+<td class="r data">74</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">6.2</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">72</th>
+<td class="r data">21</td>
+<td class="data">M</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">37.2</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">73</th>
+<td class="r data">58</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">21.7</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">74</th>
+<td class="r data">22</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">29.1</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">75</th>
+<td class="r data">61</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">32.3</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">76</th>
+<td class="r data">49</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">29</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">77</th>
+<td class="r data">28</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">23.1</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">78</th>
+<td class="r data">31</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">21.3</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">79</th>
+<td class="r data">50</td>
+<td class="data">M</td>
+<td class="data">HIGH</td>
+<td class="data">HIGH</td>
+<td class="r data">32.8</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">80</th>
+<td class="r data">64</td>
+<td class="data">M</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">12.6</td>
+<td class="data">DrugB</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">81</th>
+<td class="r data">54</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">37</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">82</th>
+<td class="r data">18</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">28.8</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">83</th>
+<td class="r data">16</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">12.4</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">84</th>
+<td class="r data">20</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">29.6</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">85</th>
+<td class="r data">68</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">23</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">86</th>
+<td class="r data">56</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">28.6</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">87</th>
+<td class="r data">18</td>
+<td class="data">M</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">30.6</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">88</th>
+<td class="r data">68</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">8.8</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">89</th>
+<td class="r data">43</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">22.2</td>
+<td class="data">DrugB</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">90</th>
+<td class="r data">32</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">35.8</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">91</th>
+<td class="r data">40</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">16.3</td>
+<td class="data">DrugB</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">92</th>
+<td class="r data">58</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">25</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">93</th>
+<td class="r data">48</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">17.8</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">94</th>
+<td class="r data">24</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">20.5</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">95</th>
+<td class="r data">50</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">23.6</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">96</th>
+<td class="r data">28</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">23.6</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">97</th>
+<td class="r data">45</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">12.5</td>
+<td class="data">DrugB</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">98</th>
+<td class="r data">62</td>
+<td class="data">M</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">27.9</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">99</th>
+<td class="r data">29</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">8.8</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">100</th>
+<td class="r data">22</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">10.4</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">101</th>
+<td class="r data">28</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">6.1</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">102</th>
+<td class="r data">37</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">HIGH</td>
+<td class="r data">9.7</td>
+<td class="data">DrugA</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">103</th>
+<td class="r data">74</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">21.1</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">104</th>
+<td class="r data">71</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">25.4</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">105</th>
+<td class="r data">54</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">31.4</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">106</th>
+<td class="r data">35</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">9.4</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">107</th>
+<td class="r data">30</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">33.2</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">108</th>
+<td class="r data">59</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">29.9</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">109</th>
+<td class="r data">32</td>
+<td class="data">M</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">19.1</td>
+<td class="data">DrugB</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">110</th>
+<td class="r data">61</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">35.9</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">111</th>
+<td class="r data">67</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">37.7</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">112</th>
+<td class="r data">38</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">12.6</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">113</th>
+<td class="r data">40</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">18.1</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">114</th>
+<td class="r data">39</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">HIGH</td>
+<td class="r data">35.6</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">115</th>
+<td class="r data">74</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">29.1</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">116</th>
+<td class="r data">74</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">7.5</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">117</th>
+<td class="r data">74</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">31</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">118</th>
+<td class="r data">59</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">32.5</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">119</th>
+<td class="r data">55</td>
+<td class="data">M</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">30</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">120</th>
+<td class="r data">43</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">31.6</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">121</th>
+<td class="r data">29</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">32.4</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">122</th>
+<td class="r data">59</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">12</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">123</th>
+<td class="r data">15</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">13.5</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">124</th>
+<td class="r data">39</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">26.3</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">125</th>
+<td class="r data">21</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">35.1</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">126</th>
+<td class="r data">23</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">16.1</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">127</th>
+<td class="r data">38</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">24.8</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">128</th>
+<td class="r data">15</td>
+<td class="data">M</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">27.9</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">129</th>
+<td class="r data">58</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">20.5</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">130</th>
+<td class="r data">22</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">28.8</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">131</th>
+<td class="r data">38</td>
+<td class="data">M</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">34.8</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">132</th>
+<td class="r data">25</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">26</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">133</th>
+<td class="r data">65</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">23.3</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">134</th>
+<td class="r data">31</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">20</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">135</th>
+<td class="r data">22</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">24.5</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">136</th>
+<td class="r data">49</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">17.4</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">137</th>
+<td class="r data">49</td>
+<td class="data">M</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">18.5</td>
+<td class="data">DrugB</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">138</th>
+<td class="r data">47</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">23</td>
+<td class="data">DrugB</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">139</th>
+<td class="r data">73</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">8.1</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">140</th>
+<td class="r data">19</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">13.3</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">141</th>
+<td class="r data">56</td>
+<td class="data">M</td>
+<td class="data">HIGH</td>
+<td class="data">HIGH</td>
+<td class="r data">23.4</td>
+<td class="data">DrugA</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">142</th>
+<td class="r data">53</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">19.8</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">143</th>
+<td class="r data">72</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">16.7</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">144</th>
+<td class="r data">55</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">29.4</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">145</th>
+<td class="r data">42</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">28.2</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">146</th>
+<td class="r data">21</td>
+<td class="data">M</td>
+<td class="data">HIGH</td>
+<td class="data">HIGH</td>
+<td class="r data">11.3</td>
+<td class="data">DrugA</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">147</th>
+<td class="r data">23</td>
+<td class="data">M</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">34.1</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">148</th>
+<td class="r data">22</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">21.9</td>
+<td class="data">DrugB</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">149</th>
+<td class="r data">26</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">29.7</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">150</th>
+<td class="r data">48</td>
+<td class="data">M</td>
+<td class="data">HIGH</td>
+<td class="data">HIGH</td>
+<td class="r data">24.3</td>
+<td class="data">DrugA</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">151</th>
+<td class="r data">47</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">37.9</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">152</th>
+<td class="r data">62</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">30.1</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">153</th>
+<td class="r data">69</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">28.6</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">154</th>
+<td class="r data">37</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">HIGH</td>
+<td class="r data">30.9</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">155</th>
+<td class="r data">38</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">HIGH</td>
+<td class="r data">10.6</td>
+<td class="data">DrugA</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">156</th>
+<td class="r data">51</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">12.5</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">157</th>
+<td class="r data">49</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">HIGH</td>
+<td class="r data">28.9</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">158</th>
+<td class="r data">58</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">21.8</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">159</th>
+<td class="r data">54</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">30.1</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">160</th>
+<td class="r data">36</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">9.3</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">161</th>
+<td class="r data">41</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">23.2</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">162</th>
+<td class="r data">49</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">18.1</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">163</th>
+<td class="r data">15</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">20.6</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">164</th>
+<td class="r data">49</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">25.3</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">165</th>
+<td class="r data">51</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">22.1</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">166</th>
+<td class="r data">61</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">23.3</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">167</th>
+<td class="r data">28</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">21.6</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">168</th>
+<td class="r data">17</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">19.1</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">169</th>
+<td class="r data">15</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">30.7</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">170</th>
+<td class="r data">19</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">6.4</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">171</th>
+<td class="r data">40</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">25.2</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">172</th>
+<td class="r data">69</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">24.1</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">173</th>
+<td class="r data">28</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">28.9</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">174</th>
+<td class="r data">53</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">25.2</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">175</th>
+<td class="r data">41</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">32.5</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">176</th>
+<td class="r data">23</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">36.7</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">177</th>
+<td class="r data">29</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">17</td>
+<td class="data">DrugB</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">178</th>
+<td class="r data">29</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">13.3</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">179</th>
+<td class="r data">40</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">19.6</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">180</th>
+<td class="r data">56</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">15.2</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">181</th>
+<td class="r data">74</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">25.7</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">182</th>
+<td class="r data">27</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">HIGH</td>
+<td class="r data">35.2</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">183</th>
+<td class="r data">65</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">10.5</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">184</th>
+<td class="r data">46</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">9.2</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">185</th>
+<td class="r data">53</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">14.2</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">186</th>
+<td class="r data">63</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">HIGH</td>
+<td class="r data">29.2</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">187</th>
+<td class="r data">66</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">25</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">188</th>
+<td class="r data">46</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">9.3</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">189</th>
+<td class="r data">18</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">HIGH</td>
+<td class="r data">35.4</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">190</th>
+<td class="r data">44</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">31.3</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">191</th>
+<td class="r data">51</td>
+<td class="data">F</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">6.7</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">192</th>
+<td class="r data">37</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">26.8</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">193</th>
+<td class="r data">53</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">30.7</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">194</th>
+<td class="r data">59</td>
+<td class="data">F</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">18</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">195</th>
+<td class="r data">29</td>
+<td class="data">M</td>
+<td class="data">NORMAL</td>
+<td class="data">NORMAL</td>
+<td class="r data">8.2</td>
+<td class="data">DrugX</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">196</th>
+<td class="r data">57</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">8.5</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">197</th>
+<td class="r data">43</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">NORMAL</td>
+<td class="r data">9.3</td>
+<td class="data">DrugC</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">198</th>
+<td class="r data">50</td>
+<td class="data">M</td>
+<td class="data">LOW</td>
+<td class="data">HIGH</td>
+<td class="r data">32.9</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">199</th>
+<td class="r data">27</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">35.1</td>
+<td class="data">DrugY</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">200</th>
+<td class="r data">46</td>
+<td class="data">F</td>
+<td class="data">HIGH</td>
+<td class="data">NORMAL</td>
+<td class="r data">9.9</td>
+<td class="data">DrugB</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section data-name="Means" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX1" class="proc_title_group">
+<p class="c proctitle">The MEANS Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Means Procedure</h1>
+<article aria-label="Summary statistics">
+<h1 class="contentitem toc">Summary statistics</h1>
+<table class="table" style="border-spacing: 0" aria-label="Summary statistics">
+<caption aria-label="Summary statistics"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="b header" scope="col">Variable</th>
+<th class="r b header" scope="col">N</th>
+<th class="r b header" scope="col">Mean</th>
+<th class="r b header" scope="col">Std Dev</th>
+<th class="r b header" scope="col">Minimum</th>
+<th class="r b header" scope="col">Maximum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="data">
+<div class="stacked-cell">
+<div>Age</div>
+<div>Na_to_K</div>
+</div>
+</th>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">200</div>
+<div class="r">200</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">44.3250000</div>
+<div class="r">22.3250000</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">17.3902698</div>
+<div class="r">9.0671629</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">15.0000000</div>
+<div class="r">6.1000000</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">74.0000000</div>
+<div class="r">37.9000000</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section data-name="Freq" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX2" class="proc_title_group">
+<p class="c proctitle">The FREQ Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Freq Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Table Drug</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="b header" scope="col">Drug</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">DrugA</th>
+<td class="r data">10</td>
+<td class="r data">5.00</td>
+<td class="r data">10</td>
+<td class="r data">5.00</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DrugB</th>
+<td class="r data">15</td>
+<td class="r data">7.50</td>
+<td class="r data">25</td>
+<td class="r data">12.50</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DrugC</th>
+<td class="r data">39</td>
+<td class="r data">19.50</td>
+<td class="r data">64</td>
+<td class="r data">32.00</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DrugX</th>
+<td class="r data">54</td>
+<td class="r data">27.00</td>
+<td class="r data">118</td>
+<td class="r data">59.00</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DrugY</th>
+<td class="r data">82</td>
+<td class="r data">41.00</td>
+<td class="r data">200</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+<section data-name="Freq" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX3" class="proc_title_group">
+<p class="c proctitle">The FREQ Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Freq Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Table BP * Drug</h1>
+<article aria-label="Cross-Tabular Freq Table">
+<h1 class="contentitem toc">Cross-Tabular Freq Table</h1>
+<table role="presentation">
+<tr>
+<td class="c t"><table class="table" style="border-spacing: 0">
+<colgroup><col/></colgroup>
+<tbody>
+<tr>
+<th class="t header" scope="col">
+<div class="stacked-cell">
+<div class="t">Frequency</div>
+<div class="t">Percent</div>
+<div class="t">Row Pct</div>
+<div class="t">Col Pct</div>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+</td>
+<td><table class="table" style="border-spacing: 0" aria-label="Cross-Tabular Freq Table">
+<caption aria-label="Cross-Tabular Freq Table"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c header" colspan="7" scope="colgroup">Table&#160;of&#160;BP&#160;by&#160;Drug</th>
+</tr>
+<tr>
+<th class="c b header" rowspan="2" scope="col">BP</th>
+<th class="c b header" colspan="6" scope="colgroup">Drug</th>
+</tr>
+<tr>
+<th class="r header" scope="col">DrugA</th>
+<th class="r header" scope="col">DrugB</th>
+<th class="r header" scope="col">DrugC</th>
+<th class="r header" scope="col">DrugX</th>
+<th class="r header" scope="col">DrugY</th>
+<th class="r header" scope="col">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="t rowheader" scope="row">HIGH</th>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">10</div>
+<div class="r t">5.00</div>
+<div class="r t">20.41</div>
+<div class="r t">100.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">15</div>
+<div class="r t">7.50</div>
+<div class="r t">30.61</div>
+<div class="r t">100.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">0</div>
+<div class="r t">0.00</div>
+<div class="r t">0.00</div>
+<div class="r t">0.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">0</div>
+<div class="r t">0.00</div>
+<div class="r t">0.00</div>
+<div class="r t">0.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">24</div>
+<div class="r t">12.00</div>
+<div class="r t">48.98</div>
+<div class="r t">29.27</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">49</div>
+<div class="r t">24.50</div>
+<div class="r t">&#160;</div>
+<div class="r t">&#160;</div>
+</div>
+</td>
+</tr>
+<tr>
+<th class="t rowheader" scope="row">LOW</th>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">0</div>
+<div class="r t">0.00</div>
+<div class="r t">0.00</div>
+<div class="r t">0.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">0</div>
+<div class="r t">0.00</div>
+<div class="r t">0.00</div>
+<div class="r t">0.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">39</div>
+<div class="r t">19.50</div>
+<div class="r t">62.90</div>
+<div class="r t">100.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">0</div>
+<div class="r t">0.00</div>
+<div class="r t">0.00</div>
+<div class="r t">0.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">23</div>
+<div class="r t">11.50</div>
+<div class="r t">37.10</div>
+<div class="r t">28.05</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">62</div>
+<div class="r t">31.00</div>
+<div class="r t">&#160;</div>
+<div class="r t">&#160;</div>
+</div>
+</td>
+</tr>
+<tr>
+<th class="t rowheader" scope="row">NORMAL</th>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">0</div>
+<div class="r t">0.00</div>
+<div class="r t">0.00</div>
+<div class="r t">0.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">0</div>
+<div class="r t">0.00</div>
+<div class="r t">0.00</div>
+<div class="r t">0.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">0</div>
+<div class="r t">0.00</div>
+<div class="r t">0.00</div>
+<div class="r t">0.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">54</div>
+<div class="r t">27.00</div>
+<div class="r t">60.67</div>
+<div class="r t">100.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">35</div>
+<div class="r t">17.50</div>
+<div class="r t">39.33</div>
+<div class="r t">42.68</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">89</div>
+<div class="r t">44.50</div>
+<div class="r t">&#160;</div>
+<div class="r t">&#160;</div>
+</div>
+</td>
+</tr>
+<tr>
+<th class="t rowheader" scope="row">Total</th>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">10</div>
+<div class="r t">5.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">15</div>
+<div class="r t">7.50</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">39</div>
+<div class="r t">19.50</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">54</div>
+<div class="r t">27.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">82</div>
+<div class="r t">41.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">200</div>
+<div class="r t">100.00</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</table>
+</article>
+<div class="proc_note_group">
+<p class="c proctitle">Statistics for Table of BP by Drug</p>
+</div>
+<article id="IDX4" aria-label="Chi-Square Tests">
+<h1 class="contentitem toc">Chi-Square Tests</h1>
+<table class="table" style="border-spacing: 0" aria-label="Chi-Square Tests">
+<caption aria-label="Chi-Square Tests"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="b header" scope="col">Statistic</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Prob</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<th class="c b footer" colspan="4">WARNING: 33% of the cells have expected counts less<br/>than 5. Chi-Square may not be a valid test.</th>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Chi-Square</th>
+<td class="r data">8</td>
+<td class="r data">232.2478</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Likelihood Ratio Chi-Square</th>
+<td class="r data">8</td>
+<td class="r data">250.1383</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Mantel-Haenszel Chi-Square</th>
+<td class="r data">1</td>
+<td class="r data">31.4346</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Phi Coefficient</th>
+<td class="r data">&#160;</td>
+<td class="r data">1.0776</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Contingency Coefficient</th>
+<td class="r data">&#160;</td>
+<td class="r data">0.7330</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Cramer&apos;s V</th>
+<td class="r data">&#160;</td>
+<td class="r data">0.7620</td>
+<td class="r data">&#160;</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="proc_note_group">
+<p class="c proctitle">Sample Size = 200</p>
+</div>
+</section>
+</section>
+<section data-name="Means" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX5" class="proc_title_group">
+<p class="c proctitle">The MEANS Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Means Procedure</h1>
+<article aria-label="Summary statistics">
+<h1 class="contentitem toc">Summary statistics</h1>
+<table class="table" style="border-spacing: 0" aria-label="Summary statistics">
+<caption aria-label="Summary statistics"></caption>
+<colgroup><col/><col/></colgroup><colgroup><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="7" scope="colgroup">Analysis Variable : Age</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Drug</th>
+<th class="r b header" scope="col">N Obs</th>
+<th class="r b header" scope="col">N</th>
+<th class="r b header" scope="col">Mean</th>
+<th class="r b header" scope="col">Std Dev</th>
+<th class="r b header" scope="col">Minimum</th>
+<th class="r b header" scope="col">Maximum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="t data">DrugA</th>
+<th class="r t data">10</th>
+<td class="r data">10</td>
+<td class="r data">41.2000000</td>
+<td class="r data">10.8607346</td>
+<td class="r data">21.0000000</td>
+<td class="r data">58.0000000</td>
+</tr>
+<tr>
+<th class="t data">DrugB</th>
+<th class="r t data">15</th>
+<td class="r data">15</td>
+<td class="r data">42.4666667</td>
+<td class="r data">13.9071753</td>
+<td class="r data">22.0000000</td>
+<td class="r data">66.0000000</td>
+</tr>
+<tr>
+<th class="t data">DrugC</th>
+<th class="r t data">39</th>
+<td class="r data">39</td>
+<td class="r data">44.1025641</td>
+<td class="r data">18.3529646</td>
+<td class="r data">15.0000000</td>
+<td class="r data">74.0000000</td>
+</tr>
+<tr>
+<th class="t data">DrugX</th>
+<th class="r t data">54</th>
+<td class="r data">54</td>
+<td class="r data">48.2407407</td>
+<td class="r data">18.5400486</td>
+<td class="r data">16.0000000</td>
+<td class="r data">74.0000000</td>
+</tr>
+<tr>
+<th class="t data">DrugY</th>
+<th class="r t data">82</th>
+<td class="r data">82</td>
+<td class="r data">42.5731707</td>
+<td class="r data">17.2719929</td>
+<td class="r data">15.0000000</td>
+<td class="r data">74.0000000</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section data-name="SGPlot" data-sec-type="proc">
+<hr class="pagebreak"/>
+<h1 class="contentprocname toc">The SGPlot Procedure</h1>
+<article id="IDX6" aria-label="The SGPlot Procedure">
+<h1 class="contentitem toc">The SGPlot Procedure</h1>
+<div class="c">
+<img style="height: 480px; width: 640px" alt="The SGPlot Procedure" src="data:image/png;base64,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4BsTdUvUc5m/t2cFS2Cif8MZY8NZexb5wx/smgEAII4A35jdX35p5wr/c+a2h0f3fGBIjA7TAADcFteAAQAQQIABABBAgAEAEECAAQAQQIABABBAgAEAEECAAQAQQIABABBAgAEAEECAAQAQQIABABBAgAEAEECAAQAQQIABABBAgAEAEECAAQAQQIABABBAgAEAEECAAQAQQIABABBAgAEAEECAAQAQ4Cc9ALyXQamnH/+dn9HY5hVq/W/1aaoyNpxr8wqWqqrf/GZ8m+8OAG1GgCFm+/ZtdXV19qww643iO3qGTxja3Z5FwsLC7Lk7ALQNAYaYrl272rlCaOjJDh06xMTE6DEOADgV14ABABBAgAEAEECAAQAQQIABABBAgAEAEECAAQAQQIABABBAgAEAEECAAQAQQIABABBAgAEAEECAAQAQQIABABBAgAEAEECAAQAQwPsBA8BVDAbDonlZq5a80OYVGnzbawZfY8PZNq9QW3sloXdCm+8Ot0CAAeAqa9euqa6utmeFNz46UVndkPlQD3sWCQoKsufucH0EGACu0qlTJztXiIw0+xjrYmJi9BgHHotrwAAACCDAAAAIIMAAAAjgGjDgCQwGw8olL4SFhbd5hRotwkc1BRgq27xCRcWFvr/ghbtoaYPpjb9//EGb716rhTYqY7DhYptXqK62+ChDm+/uOAQY8ASvvvqK2Wy2Z4XVW89HBPtMHHKTPYt07NjRnrvD88yalfXoo4/Ys8LH+ZeOnL4y4zed7VkkNDTUnrs7CAEGPMEvf/lLO1f4pOjLju0CBw9O1GUewKpXr169evWyZ4WjFSWVTecHD75Hr5FcB9eAAQAQQIABABBAgAEAEECAAQAQQIABABBAgAEAEECAAQAQQIABABBAgAEAEECAAQAQQIABABBAgAEAEECAAQAQQIABABBAgAEAEECAAQAQQIABABBAgAEAEECAAQAQQIABABBAgAEAEECAAQAQQIABABBAgAEAEECAAQAQQIABABBAgAEAEECAAQAQQIABABBAgAEAEECAAQAQQIABABBAgAEAEOAnPQBwXd+UXn7JtL+VHXYfOvtN2eX8A2evt4PBoNbMGeiA0QDAXgQYris0yPjrX3RqZYfWPwsArowAw3V1uiko/f446SkAwCG4BgwAgAACDACAAAIMAIAArgHrrPibizkflLSy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"/>
+</div>
+</article>
+</section>
+<section data-name="Freq" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX7" class="proc_title_group">
+<p class="c proctitle">The FREQ Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Freq Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Table Sex * Drug</h1>
+<article aria-label="Cross-Tabular Freq Table">
+<h1 class="contentitem toc">Cross-Tabular Freq Table</h1>
+<table role="presentation">
+<tr>
+<td class="c t"><table class="table" style="border-spacing: 0">
+<colgroup><col/></colgroup>
+<tbody>
+<tr>
+<th class="t header" scope="col">
+<div class="stacked-cell">
+<div class="t">Frequency</div>
+<div class="t">Percent</div>
+<div class="t">Row Pct</div>
+<div class="t">Col Pct</div>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+</td>
+<td><table class="table" style="border-spacing: 0" aria-label="Cross-Tabular Freq Table">
+<caption aria-label="Cross-Tabular Freq Table"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c header" colspan="7" scope="colgroup">Table&#160;of&#160;Sex&#160;by&#160;Drug</th>
+</tr>
+<tr>
+<th class="c b header" rowspan="2" scope="col">Sex</th>
+<th class="c b header" colspan="6" scope="colgroup">Drug</th>
+</tr>
+<tr>
+<th class="r header" scope="col">DrugA</th>
+<th class="r header" scope="col">DrugB</th>
+<th class="r header" scope="col">DrugC</th>
+<th class="r header" scope="col">DrugX</th>
+<th class="r header" scope="col">DrugY</th>
+<th class="r header" scope="col">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="t rowheader" scope="row">F</th>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">3</div>
+<div class="r t">1.50</div>
+<div class="r t">2.83</div>
+<div class="r t">30.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">9</div>
+<div class="r t">4.50</div>
+<div class="r t">8.49</div>
+<div class="r t">60.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">16</div>
+<div class="r t">8.00</div>
+<div class="r t">15.09</div>
+<div class="r t">41.03</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">30</div>
+<div class="r t">15.00</div>
+<div class="r t">28.30</div>
+<div class="r t">55.56</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">48</div>
+<div class="r t">24.00</div>
+<div class="r t">45.28</div>
+<div class="r t">58.54</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">106</div>
+<div class="r t">53.00</div>
+<div class="r t">&#160;</div>
+<div class="r t">&#160;</div>
+</div>
+</td>
+</tr>
+<tr>
+<th class="t rowheader" scope="row">M</th>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">7</div>
+<div class="r t">3.50</div>
+<div class="r t">7.45</div>
+<div class="r t">70.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">6</div>
+<div class="r t">3.00</div>
+<div class="r t">6.38</div>
+<div class="r t">40.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">23</div>
+<div class="r t">11.50</div>
+<div class="r t">24.47</div>
+<div class="r t">58.97</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">24</div>
+<div class="r t">12.00</div>
+<div class="r t">25.53</div>
+<div class="r t">44.44</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">34</div>
+<div class="r t">17.00</div>
+<div class="r t">36.17</div>
+<div class="r t">41.46</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">94</div>
+<div class="r t">47.00</div>
+<div class="r t">&#160;</div>
+<div class="r t">&#160;</div>
+</div>
+</td>
+</tr>
+<tr>
+<th class="t rowheader" scope="row">Total</th>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">10</div>
+<div class="r t">5.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">15</div>
+<div class="r t">7.50</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">39</div>
+<div class="r t">19.50</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">54</div>
+<div class="r t">27.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">82</div>
+<div class="r t">41.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">200</div>
+<div class="r t">100.00</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</table>
+</article>
+<div class="proc_note_group">
+<p class="c proctitle">Statistics for Table of Sex by Drug</p>
+</div>
+<article id="IDX8" aria-label="Chi-Square Tests">
+<h1 class="contentitem toc">Chi-Square Tests</h1>
+<table class="table" style="border-spacing: 0" aria-label="Chi-Square Tests">
+<caption aria-label="Chi-Square Tests"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="b header" scope="col">Statistic</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Prob</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Chi-Square</th>
+<td class="r data">4</td>
+<td class="r data">5.8143</td>
+<td class="r data">0.2135</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Likelihood Ratio Chi-Square</th>
+<td class="r data">4</td>
+<td class="r data">5.8626</td>
+<td class="r data">0.2096</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Mantel-Haenszel Chi-Square</th>
+<td class="r data">1</td>
+<td class="r data">2.9086</td>
+<td class="r data">0.0881</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Phi Coefficient</th>
+<td class="r data">&#160;</td>
+<td class="r data">0.1705</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Contingency Coefficient</th>
+<td class="r data">&#160;</td>
+<td class="r data">0.1681</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Cramer&apos;s V</th>
+<td class="r data">&#160;</td>
+<td class="r data">0.1705</td>
+<td class="r data">&#160;</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="proc_note_group">
+<p class="c proctitle">Sample Size = 200</p>
+</div>
+</section>
+</section>
+<section data-name="Means" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX9" class="proc_title_group">
+<p class="c proctitle">The MEANS Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Means Procedure</h1>
+<article aria-label="Summary statistics">
+<h1 class="contentitem toc">Summary statistics</h1>
+<table class="table" style="border-spacing: 0" aria-label="Summary statistics">
+<caption aria-label="Summary statistics"></caption>
+<colgroup><col/><col/></colgroup><colgroup><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="7" scope="colgroup">Analysis Variable : Na_to_K</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Drug</th>
+<th class="r b header" scope="col">N Obs</th>
+<th class="r b header" scope="col">N</th>
+<th class="r b header" scope="col">Mean</th>
+<th class="r b header" scope="col">Std Dev</th>
+<th class="r b header" scope="col">Minimum</th>
+<th class="r b header" scope="col">Maximum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="t data">DrugA</th>
+<th class="r t data">10</th>
+<td class="r data">10</td>
+<td class="r data">13.8400000</td>
+<td class="r data">6.8427090</td>
+<td class="r data">7.0000000</td>
+<td class="r data">24.3000000</td>
+</tr>
+<tr>
+<th class="t data">DrugB</th>
+<th class="r t data">15</th>
+<td class="r data">15</td>
+<td class="r data">16.1000000</td>
+<td class="r data">4.4783607</td>
+<td class="r data">8.7000000</td>
+<td class="r data">23.0000000</td>
+</tr>
+<tr>
+<th class="t data">DrugC</th>
+<th class="r t data">39</th>
+<td class="r data">39</td>
+<td class="r data">14.7256410</td>
+<td class="r data">6.5407918</td>
+<td class="r data">6.1000000</td>
+<td class="r data">25.0000000</td>
+</tr>
+<tr>
+<th class="t data">DrugX</th>
+<th class="r t data">54</th>
+<td class="r data">54</td>
+<td class="r data">17.5777778</td>
+<td class="r data">5.7095969</td>
+<td class="r data">6.1000000</td>
+<td class="r data">25.0000000</td>
+</tr>
+<tr>
+<th class="t data">DrugY</th>
+<th class="r t data">82</th>
+<td class="r data">82</td>
+<td class="r data">31.2390244</td>
+<td class="r data">3.5462989</td>
+<td class="r data">25.1000000</td>
+<td class="r data">37.9000000</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section data-name="SGPlot" data-sec-type="proc">
+<hr class="pagebreak"/>
+<h1 class="contentprocname toc">The SGPlot Procedure</h1>
+<article id="IDX10" aria-label="The SGPlot Procedure">
+<h1 class="contentitem toc">The SGPlot Procedure</h1>
+<div class="c">
+<img style="height: 480px; width: 640px" alt="The SGPlot Procedure" src="data:image/png;base64,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"/>
+</div>
+</article>
+</section>
+<section data-name="Freq" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX11" class="proc_title_group">
+<p class="c proctitle">The FREQ Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Freq Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Table Cholesterol * Drug</h1>
+<article aria-label="Cross-Tabular Freq Table">
+<h1 class="contentitem toc">Cross-Tabular Freq Table</h1>
+<table role="presentation">
+<tr>
+<td class="c t"><table class="table" style="border-spacing: 0">
+<colgroup><col/></colgroup>
+<tbody>
+<tr>
+<th class="t header" scope="col">
+<div class="stacked-cell">
+<div class="t">Frequency</div>
+<div class="t">Percent</div>
+<div class="t">Row Pct</div>
+<div class="t">Col Pct</div>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+</td>
+<td><table class="table" style="border-spacing: 0" aria-label="Cross-Tabular Freq Table">
+<caption aria-label="Cross-Tabular Freq Table"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c header" colspan="7" scope="colgroup">Table&#160;of&#160;Cholesterol&#160;by&#160;Drug</th>
+</tr>
+<tr>
+<th class="c b header" rowspan="2" scope="col">Cholesterol</th>
+<th class="c b header" colspan="6" scope="colgroup">Drug</th>
+</tr>
+<tr>
+<th class="r header" scope="col">DrugA</th>
+<th class="r header" scope="col">DrugB</th>
+<th class="r header" scope="col">DrugC</th>
+<th class="r header" scope="col">DrugX</th>
+<th class="r header" scope="col">DrugY</th>
+<th class="r header" scope="col">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="t rowheader" scope="row">HIGH</th>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">10</div>
+<div class="r t">5.00</div>
+<div class="r t">12.82</div>
+<div class="r t">100.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">0</div>
+<div class="r t">0.00</div>
+<div class="r t">0.00</div>
+<div class="r t">0.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">15</div>
+<div class="r t">7.50</div>
+<div class="r t">19.23</div>
+<div class="r t">38.46</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">17</div>
+<div class="r t">8.50</div>
+<div class="r t">21.79</div>
+<div class="r t">31.48</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">36</div>
+<div class="r t">18.00</div>
+<div class="r t">46.15</div>
+<div class="r t">43.90</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">78</div>
+<div class="r t">39.00</div>
+<div class="r t">&#160;</div>
+<div class="r t">&#160;</div>
+</div>
+</td>
+</tr>
+<tr>
+<th class="t rowheader" scope="row">NORMAL</th>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">0</div>
+<div class="r t">0.00</div>
+<div class="r t">0.00</div>
+<div class="r t">0.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">15</div>
+<div class="r t">7.50</div>
+<div class="r t">12.30</div>
+<div class="r t">100.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">24</div>
+<div class="r t">12.00</div>
+<div class="r t">19.67</div>
+<div class="r t">61.54</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">37</div>
+<div class="r t">18.50</div>
+<div class="r t">30.33</div>
+<div class="r t">68.52</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">46</div>
+<div class="r t">23.00</div>
+<div class="r t">37.70</div>
+<div class="r t">56.10</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">122</div>
+<div class="r t">61.00</div>
+<div class="r t">&#160;</div>
+<div class="r t">&#160;</div>
+</div>
+</td>
+</tr>
+<tr>
+<th class="t rowheader" scope="row">Total</th>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">10</div>
+<div class="r t">5.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">15</div>
+<div class="r t">7.50</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">39</div>
+<div class="r t">19.50</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">54</div>
+<div class="r t">27.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">82</div>
+<div class="r t">41.00</div>
+</div>
+</td>
+<td class="r t data">
+<div class="stacked-cell">
+<div class="r t">200</div>
+<div class="r t">100.00</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</table>
+</article>
+<div class="proc_note_group">
+<p class="c proctitle">Statistics for Table of Cholesterol by Drug</p>
+</div>
+<article id="IDX12" aria-label="Chi-Square Tests">
+<h1 class="contentitem toc">Chi-Square Tests</h1>
+<table class="table" style="border-spacing: 0" aria-label="Chi-Square Tests">
+<caption aria-label="Chi-Square Tests"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="b header" scope="col">Statistic</th>
+<th class="r b header" scope="col">DF</th>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Prob</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Chi-Square</th>
+<td class="r data">4</td>
+<td class="r data">27.3475</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Likelihood Ratio Chi-Square</th>
+<td class="r data">4</td>
+<td class="r data">35.8028</td>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Mantel-Haenszel Chi-Square</th>
+<td class="r data">1</td>
+<td class="r data">0.0872</td>
+<td class="r data">0.7678</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Phi Coefficient</th>
+<td class="r data">&#160;</td>
+<td class="r data">0.3698</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Contingency Coefficient</th>
+<td class="r data">&#160;</td>
+<td class="r data">0.3468</td>
+<td class="r data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Cramer&apos;s V</th>
+<td class="r data">&#160;</td>
+<td class="r data">0.3698</td>
+<td class="r data">&#160;</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="proc_note_group">
+<p class="c proctitle">Sample Size = 200</p>
+</div>
+</section>
+</section>
+</div>
+</body>
+</html>
